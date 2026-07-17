@@ -1,4 +1,4 @@
 interface:
   display_name: "Thinking 认知合伙人"
-  short_description: "主动重构混沌想法，诊断逻辑盲区并共同提炼可复用知识"
-  default_prompt: "使用 $thinking 主动重构我的这段想法，检查逻辑与认知盲区，并和我共同形成一版清晰结论。"
+  short_description: "定位认知卡点，主动重构想法、补足盲区并提炼可复用知识"
+  default_prompt: "使用 $thinking 先判断我真正卡在哪里，再主动重构这段想法、补足认知缺口，并形成一版可检验的清晰结论。"
