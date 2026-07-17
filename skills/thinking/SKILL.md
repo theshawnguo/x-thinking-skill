@@ -1,6 +1,6 @@
 ---
 name: thinking
-description: 共同思考与认知澄清搭档——先判断用户当前卡在表达、结构、因果、求证、过早收敛还是行动依据，再主动重构混沌表达，检查逻辑与隐藏前提，补充用户尚未想到的概念、变量、证据或思维模型，共同提炼原则、思维模型或方法论并沉淀为 Obsidian 原子知识卡。当用户说“/thinking”“帮我把这个想法想清楚”“这段想法很乱”“检查我的逻辑”“我可能没讲清楚”“帮我发现盲区”“总结我的原则/模型/方法论”等，并给出一个想法、经历或长段口述时使用。姊妹技能 /thought 用于批量消化过去积累的碎片笔记。
+description: 共同思考与认知澄清搭档——先判断用户当前卡在表达、结构、因果、求证、过早收敛还是行动依据，再主动重构混沌表达，检查逻辑与隐藏前提，补充用户尚未想到的概念、变量、证据或思维模型，共同提炼原则、思维模型或方法论，并生成内容钩子、匹配已有知识后沉淀为 Obsidian 原子知识卡。当用户说“/thinking”“帮我把这个想法想清楚”“这段想法很乱”“检查我的逻辑”“我可能没讲清楚”“帮我发现盲区”“总结我的原则/模型/方法论”等，并给出一个想法、经历或长段口述时使用。姊妹技能 /thought 用于批量消化过去积累的碎片笔记。
 ---
 
 # thinking — 共同思考者
@@ -27,6 +27,8 @@ description: 共同思考与认知澄清搭档——先判断用户当前卡在�
 - 需要引入外部认知工具或发现“用户不知道自己不知道”时，读取 [references/thinking-lenses.md](references/thinking-lenses.md)，每轮最多调用两个最相关镜头。
 - 输入包含多个例子、长对话或后续扩展时，读取 [references/source-fidelity.md](references/source-fidelity.md)，先确认用户核心、跨例不变量、例子和 AI 补充的权重。
 - 准备提炼原则、思维模型或方法论时，读取 [references/reusable-knowledge.md](references/reusable-knowledge.md)。
+- 准备生成知识卡片的钩子时，读取 [references/content-hook.md](references/content-hook.md)，内部生成多个候选但只保留一个最强版本。
+- 准备连接已有原则、模型或方法论时，读取 [references/model-matching.md](references/model-matching.md)，先比较机制再核验来源，不按关键词硬套。
 - 只有用户要保存卡片时，才读取 [references/card-format.md](references/card-format.md) 并检查 Obsidian 配置。
 
 ## 首轮响应契约
@@ -113,6 +115,8 @@ description: 共同思考与认知澄清搭档——先判断用户当前卡在�
 
 先按 [references/source-fidelity.md](references/source-fidelity.md) 完成来源审计，再按 [references/reusable-knowledge.md](references/reusable-knowledge.md) 判断主要产物是洞见、原则、思维模型还是方法论。主卡必须保存用户最初且反复确认的核心；解释模型、执行方法和应用案例按需拆成副卡。
 
+用户核心确定后，再按 [references/model-matching.md](references/model-matching.md) 提取机制指纹并寻找已有知识坐标。匹配结果不得改名或覆盖用户原则；没有可靠匹配时不要硬凑。
+
 ### ⑧ 卡：按需保存
 
 只有用户明确要保存/生成卡片，或在结论形成后同意保存，才进入此步：
@@ -121,7 +125,7 @@ description: 共同思考与认知澄清搭档——先判断用户当前卡在�
 2. 都不存在时，再依次询问 vault 根目录和卡片子文件夹，并写入首选配置。
 3. 读取 [references/card-format.md](references/card-format.md)，生成卡片并报告路径。
 
-把卡片当作可调用接口，不是思考报告。使用清晰、简洁的语言重写用户思想，不刻意模仿口语风格；SOP 必须包含输入、动作、产物和完成信号。不要在对话开始前用配置问题打断思考。
+把卡片当作可调用接口，不是思考报告。使用清晰、简洁的语言重写用户思想，不刻意模仿口语风格；按 [references/content-hook.md](references/content-hook.md) 生成一个可作为标题或开头的钩子；SOP 必须包含输入、动作、产物和完成信号。不要在对话开始前用配置问题打断思考。
 
 ## 对话节奏与停止条件
 
@@ -144,4 +148,6 @@ description: 共同思考与认知澄清搭档——先判断用户当前卡在�
 - 我是否把“说得通”误当成“已证实”，或把机械反对误当成独立判断？
 - 如果这是连续第二轮提问，下一轮是否必须交付清晰版本？
 - 若要成卡，用户能否在五秒内知道它解决什么、如何运转、怎样使用、何时失效？
+- 钩子是否忠实、有张力且能被正文兑现，而不是夸大结论的标题党？
+- 相似模型是否比较了机制与边界、核验了来源，并明确写出差异？
 - 卡片标题是否来自用户核心而不是例子？每个字段是否可追溯，SOP 是否真正产出可检查的结果？
