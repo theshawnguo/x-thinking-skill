@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thought 碎片消化"
+  short_description: "聚类跨时间碎片，主动发现模式、矛盾与可复用个人知识"
+  default_prompt: "使用 $thought 主动分析这些碎片笔记，找出跨时间模式、矛盾和最值得深入的认知。"
